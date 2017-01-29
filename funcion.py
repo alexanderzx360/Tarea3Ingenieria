@@ -5,3 +5,5 @@ Created on Jan 29, 2017
 @author: cinfante
 '''
 
+class BilleteraElectronica:
+    
