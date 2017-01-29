@@ -6,4 +6,7 @@ Created on Jan 29, 2017
 '''
 
 class BilleteraElectronica:
-    
+    identificador = 0
+    nombres = ""
+    apellidos = ""
+    PIN = 0
