@@ -14,10 +14,10 @@ class BilleteraElectronica:
     _PIN = 0
     _balance = 0
     
-    def __init__(self, identificador, nombres, apellidos, CI, PIN, balance):
+    def __init__(self, identificador=0, nombres="", apellidos="", CI=0, PIN=0, balance=0):
         if PIN < 0 or PIN > 10000:
             raise Exception('El PIN debe ser de 4 numeros')
-        if CI <= 0:
+        if CI < 0:
             raise Exception("Debe introducir una cedula valida")
         self._identificador = identificador
         self._nombres = nombres
@@ -46,28 +46,29 @@ class BilleteraElectronica:
     
 
 class RegistroRecarga:
-    if monto < 0:
-        raise Exception('El monto no puede ser negativo')
+    
     _monto = 0
     _fecha = datetime.date.today()
     _idEstablecimiento = 0
     _billetera = BilleteraElectronica()
 
     def __init__(self, monto, fecha, idEstablecimiento, billetera):
+        if monto < 0:
+            raise Exception('El monto no puede ser negativo')
         self._monto = monto
         self._fecha = fecha
         self._idEstablecimiento = idEstablecimiento
         self._billetera = billetera
         
 class RegistroConsumo:
-    if monto < 0:
-        raise Exception('El monto no puede ser negativo')
     _monto = 0
     _fecha = datetime.date.today()
     _idEstablecimiento = 0
     _billetera = BilleteraElectronica()
     
     def __init__(self, monto, fecha, idEstablecimiento, billetera):
+        if monto < 0:
+            raise Exception('El monto no puede ser negativo')
         self._monto = monto
         self._fecha = fecha
         self._idEstablecimiento = idEstablecimiento
