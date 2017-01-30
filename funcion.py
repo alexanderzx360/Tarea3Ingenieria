@@ -41,4 +41,19 @@ class RegistroRecarga:
         self._fecha = fecha
         self._idEstablecimiento = idEstablecimiento
         self._billetera = billetera
+        
+class RegistroConsumo:
+    if monto < 0:
+        raise Exception('El monto no puede ser negativo')
+    _monto = 0
+    _fecha = datetime.date.today()
+    _idEstablecimiento = 0
+    _billetera = BilleteraElectronica()
+    
+    def __init__(self, monto, fecha, idEstablecimiento, billetera):
+        self._monto = monto
+        self._fecha = fecha
+        self._idEstablecimiento = idEstablecimiento
+        self._billetera = billetera
+
 
