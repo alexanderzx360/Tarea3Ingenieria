@@ -33,6 +33,9 @@ class BilleteraElectronica:
         return self._balance
     
     def recargar(self, monto, fecha, idEstablecimiento):
+        if monto < 0:
+            raise Exception('El monto no puede ser negativo')
+        self._balance += monto
         return RegistroRecarga(monto, fecha, idEstablecimiento, self)
     
 
