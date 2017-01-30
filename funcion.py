@@ -4,6 +4,7 @@ Created on Jan 29, 2017
 @author: aromero
 @author: cinfante
 '''
+import datetime
 
 class BilleteraElectronica:
     _identificador = 0
@@ -13,8 +14,8 @@ class BilleteraElectronica:
     _PIN = 0
     
     def __init__(self, identificador, nombres, apellidos, CI, PIN):
-        if PIN < 0 or pin > 10000:
-            raise Exception('El PIN debe ser de 4 numeros MMG')
+        if PIN < 0 or PIN > 10000:
+            raise Exception('El PIN debe ser de 4 numeros')
         if CI <= 0:
             raise Exception("Debe introducir una cédula válida")
         self._identificador = identificador
@@ -25,3 +26,19 @@ class BilleteraElectronica:
     
     def getPIN(self):
         return self._PIN
+    
+
+class RegistroRecarga:
+    if monto < 0:
+        raise Exception('El monto no puede ser negativo')
+    _monto = 0
+    _fecha = datetime.date.today()
+    _idEstablecimiento = 0
+    _billetera = BilleteraElectronica()
+
+    def __init__(self, monto, fecha, idEstablecimiento, billetera):
+        self._monto = monto
+        self._fecha = fecha
+        self._idEstablecimiento = idEstablecimiento
+        self._billetera = billetera
+
