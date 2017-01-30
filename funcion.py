@@ -18,7 +18,7 @@ class BilleteraElectronica:
         if PIN < 0 or PIN > 10000:
             raise Exception('El PIN debe ser de 4 numeros')
         if CI <= 0:
-            raise Exception("Debe introducir una cédula válida")
+            raise Exception("Debe introducir una cedula valida")
         self._identificador = identificador
         self._nombres = nombres
         self._apellidos = apellidos
