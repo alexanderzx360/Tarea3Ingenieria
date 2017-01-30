@@ -12,8 +12,9 @@ class BilleteraElectronica:
     _apellidos = ""
     _CI = 0
     _PIN = 0
+    _balance = 0
     
-    def __init__(self, identificador, nombres, apellidos, CI, PIN):
+    def __init__(self, identificador, nombres, apellidos, CI, PIN, balance):
         if PIN < 0 or PIN > 10000:
             raise Exception('El PIN debe ser de 4 numeros')
         if CI <= 0:
@@ -23,9 +24,13 @@ class BilleteraElectronica:
         self._apellidos = apellidos
         self._CI = CI
         self._PIN = PIN
+        self._balance = balance
     
     def getPIN(self):
         return self._PIN
+    
+    def saldo(self):
+        return self._balance
     
 
 class RegistroRecarga:
