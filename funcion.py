@@ -1,12 +1,14 @@
+# -*- coding: utf-8 -*-
+
 '''
 Created on Jan 29, 2017
 
 @author: aromero
 @author: cinfante
 '''
-import datetime
 
-# -*- coding: utf-8 -*-
+
+import datetime
 
 class BilleteraElectronica:
     _identificador = 0
