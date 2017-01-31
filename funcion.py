@@ -6,6 +6,8 @@ Created on Jan 29, 2017
 '''
 import datetime
 
+# -*- coding: utf-8 -*-
+
 class BilleteraElectronica:
     _identificador = 0
     _nombres = ""
