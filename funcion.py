@@ -34,7 +34,7 @@ class BilleteraElectronica:
         return self._PIN
     
     def saldo(self):
-        return self._balance
+        return int(self._balance)
     
     def recargar(self, monto, fecha, idEstablecimiento):
         if monto < 0:
