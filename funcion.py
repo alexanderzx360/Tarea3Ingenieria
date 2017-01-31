@@ -38,11 +38,13 @@ class BilleteraElectronica:
         self._balance += monto
         return RegistroRecarga(monto, fecha, idEstablecimiento, self)
     
-    def consumir(self, monto, fecha, idEstablecimiento):
+    def consumir(self, monto, fecha, idEstablecimiento, confirmarPIN):
         if monto < 0:
             raise Exception('El monto no puede ser negativo')
         if self._balance < monto:
             raise Exception('No cuenta con el balance suficiente para cubrir el costo')
+        if self._PIN != confirmarPIN:
+            raise Exception("El PIN introducido es distinto al del usuario")
         self._balance -= monto
         return RegistroConsumo(monto, fecha, idEstablecimiento, self)
     
