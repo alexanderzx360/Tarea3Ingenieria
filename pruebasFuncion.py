@@ -7,7 +7,7 @@ Created on Jan 29, 2017
 '''
 import unittest
 from funcion import BilleteraElectronica, RegistroRecarga, RegistroConsumo
-from datetime import datetime
+from datetime import date
 
 class Test(unittest.TestCase):
     BilleteraElectronica = None
@@ -31,8 +31,8 @@ class Test(unittest.TestCase):
     def testRecargaMontoNegativo(self):
         with self.assertRaises(Exception) as context:
             a = BilleteraElectronica(1, "Oscaruja", "Mezortega", 45, 5)
-            a.recargar(self,-1, datetime(2017, 1, 28), 50)
-        self.assertTrue('El monto no puede ser negativo' in str(context.exception))
+            a.recargar(-1, date(2017, 1, 28), 50)
+        self.assertTrue("El monto no puede ser negativo" in str(context.exception))
         
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
