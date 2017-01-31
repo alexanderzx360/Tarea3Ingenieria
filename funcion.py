@@ -41,6 +41,8 @@ class BilleteraElectronica:
     def consumir(self, monto, fecha, idEstablecimiento):
         if monto < 0:
             raise Exception('El monto no puede ser negativo')
+        if self._balance < monto:
+            raise Exception('No cuenta con el balance suficiente para cubrir el costo')
         self._balance -= monto
         return RegistroConsumo(monto, fecha, idEstablecimiento, self)
     
