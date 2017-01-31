@@ -15,8 +15,8 @@ class BilleteraElectronica:
     _balance = 0
     
     def __init__(self, identificador=0, nombres="", apellidos="", CI=0, PIN=0, balance=0):
-        if PIN < 0 or PIN > 10000:
-            raise Exception('El PIN debe ser de 4 numeros')
+        if PIN < 0:
+            raise Exception("El PIN no puede ser un numero negativo")
         if CI < 0:
             raise Exception("Debe introducir una cedula valida")
         self._identificador = identificador
